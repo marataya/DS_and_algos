@@ -1,15 +1,8 @@
 from collections.abc import Mapping
 
+from classic_CS_problems.small_problems.count_invocations import count_invocations
+
 memo: Mapping[int, int] = {0: 0, 1: 1}  # base cases
-
-
-def count_invocations(func):
-    def wrapper(*args, **kwargs):
-        wrapper.invocation_count += 1
-        return func(*args, **kwargs)
-    wrapper.invocation_count = 0  # Initialize the count
-    return wrapper
-
 
 @count_invocations
 def fib(n: int) -> int:

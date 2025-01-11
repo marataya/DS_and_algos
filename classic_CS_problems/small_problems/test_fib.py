@@ -3,6 +3,7 @@ import pytest
 from classic_CS_problems.small_problems.fib1 import fib as fib1
 from classic_CS_problems.small_problems.fib2 import fib as fib2
 from classic_CS_problems.small_problems.memoized_fib import fib as memoized_fib
+from classic_CS_problems.small_problems.lru_cache_fib import fib as lru_cache_fib
 
 def test_fib1():
     with pytest.raises(RecursionError):
@@ -21,3 +22,7 @@ def test_fib2():
 def test_memoized_fib():
     memoized_fib(20)
     assert memoized_fib.invocation_count == 39
+
+def test_lru_cache_fib():
+    lru_cache_fib(20)
+    assert lru_cache_fib.invocation_count == 39
