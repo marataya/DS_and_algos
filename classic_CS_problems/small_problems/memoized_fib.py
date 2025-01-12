@@ -1,8 +1,9 @@
 from collections.abc import Mapping
+from typing import Dict
 
 from classic_CS_problems.small_problems.count_invocations import count_invocations
 
-memo: Mapping[int, int] = {0: 0, 1: 1}  # base cases
+memo: Dict[int, int] = {0: 0, 1: 1}  # base cases
 
 @count_invocations
 def fib(n: int) -> int:
